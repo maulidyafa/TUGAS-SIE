@@ -157,275 +157,113 @@
         <button type="button" class="btn btn-primary" id="b1">Back</button>
         <div id="chart_div"></div>
       </div>
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-          <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script>
-          
-          google.charts.load('current', {packages: ['corechart', 'bar']});
-    google.charts.setOnLoadCallback(drawAxisTickColors);
-    
-    function drawAxisTickColors() {
-      var d = {"data" :
-        [
-          {
-              "Kabupaten/Regency": "Male\"",
-              "\"Laki-Laki": "\"Perempuan"
-          },
-          {
-              "Kabupaten/Regency": "Female\"",
-              "\"Laki-Laki": "\"Jumlah"
-          },
-          {
-              "Kabupaten/Regency": "Total\""
-          },
-          {
-              "Kabupaten/Regency": "Pacitan",
-              "\"Laki-Laki": "673"
-          },
-          {
-              "Kabupaten/Regency": "Ponorogo",
-              "\"Laki-Laki": "1072"
-          },
-          {
-              "Kabupaten/Regency": "Trenggalek",
-              "\"Laki-Laki": "721"
-          },
-          {
-              "Kabupaten/Regency": "Tulungagung",
-              "\"Laki-Laki": "1289"
-          },
-          {
-              "Kabupaten/Regency": "Blitar",
-              "\"Laki-Laki": "1374"
-          },
-          {
-              "Kabupaten/Regency": "Kediri",
-              "\"Laki-Laki": "3865"
-          },
-          {
-              "Kabupaten/Regency": "Malang",
-              "\"Laki-Laki": "2374"
-          },
-          {
-              "Kabupaten/Regency": "Lumajang",
-              "\"Laki-Laki": "757"
-          },
-          {
-              "Kabupaten/Regency": "Jember",
-              "\"Laki-Laki": "3130"
-          },
-          {
-              "Kabupaten/Regency": "Banyuwangi",
-              "\"Laki-Laki": "1414"
-          },
-          {
-              "Kabupaten/Regency": "Bondowoso",
-              "\"Laki-Laki": "1878"
-          },
-          {
-              "Kabupaten/Regency": "Situbondo",
-              "\"Laki-Laki": "981"
-          },
-          {
-              "Kabupaten/Regency": "Probolinggo",
-              "\"Laki-Laki": "2266"
-          },
-          {
-              "Kabupaten/Regency": "Pasuruan",
-              "\"Laki-Laki": "2526"
-          },
-          {
-              "Kabupaten/Regency": "Sidoarjo",
-              "\"Laki-Laki": "3871"
-          },
-          {
-              "Kabupaten/Regency": "Mojokerto",
-              "\"Laki-Laki": "3028"
-          },
-          {
-              "Kabupaten/Regency": "Jombang",
-              "\"Laki-Laki": "2249"
-          },
-          {
-              "Kabupaten/Regency": "Nganjuk",
-              "\"Laki-Laki": "1643"
-          },
-          {
-              "Kabupaten/Regency": "Madiun",
-              "\"Laki-Laki": "1151"
-          },
-          {
-              "Kabupaten/Regency": "Magetan",
-              "\"Laki-Laki": "1126"
-          },
-          {
-              "Kabupaten/Regency": "Ngawi",
-              "\"Laki-Laki": "2158"
-          },
-          {
-              "Kabupaten/Regency": "Bojonegoro",
-              "\"Laki-Laki": "1652"
-          },
-          {
-              "Kabupaten/Regency": "Tuban",
-              "\"Laki-Laki": "1876"
-          },
-          {
-              "Kabupaten/Regency": "Lamongan",
-              "\"Laki-Laki": "2636"
-          },
-          {
-              "Kabupaten/Regency": "Gresik",
-              "\"Laki-Laki": "2337"
-          },
-          {
-              "Kabupaten/Regency": "Bangkalan",
-              "\"Laki-Laki": "1125"
-          },
-          {
-              "Kabupaten/Regency": "Sampang",
-              "\"Laki-Laki": "515"
-          },
-          {
-              "Kabupaten/Regency": "Pamekasan",
-              "\"Laki-Laki": "754"
-          },
-          {
-              "Kabupaten/Regency": "Sumenep",
-              "\"Laki-Laki": "929"
-          },
-          {
-              "Kabupaten/Regency": "Kota/Municipality",
-              "\"Laki-Laki": ""
-          },
-          {
-              "Kabupaten/Regency": "Kediri",
-              "\"Laki-Laki": "625"
-          },
-          {
-              "Kabupaten/Regency": "Blitar",
-              "\"Laki-Laki": "499"
-          },
-          {
-              "Kabupaten/Regency": "Malang",
-              "\"Laki-Laki": "1774"
-          },
-          {
-              "Kabupaten/Regency": "Probolinggo",
-              "\"Laki-Laki": "349"
-          },
-          {
-              "Kabupaten/Regency": "Pasuruan",
-              "\"Laki-Laki": "637"
-          },
-          {
-              "Kabupaten/Regency": "Mojokerto",
-              "\"Laki-Laki": "297"
-          },
-          {
-              "Kabupaten/Regency": "Madiun",
-              "\"Laki-Laki": "462"
-          },
-          {
-              "Kabupaten/Regency": "Surabaya",
-              "\"Laki-Laki": "7254"
-          },
-          {
-              "Kabupaten/Regency": "Batu",
-              "\"Laki-Laki": "357"
-          },
-          {
-              "Kabupaten/Regency": "Jawa Timur",
-              "\"Laki-Laki": "63624"
-          },
-          {
-              "Kabupaten/Regency": "",
-              "\"Laki-Laki": ""
-          },
-          {
-              "Kabupaten/Regency": "",
-              "\"Laki-Laki": ""
-          },
-          {
-              "Kabupaten/Regency": "",
-              "\"Laki-Laki": ""
-          },
-          {
-              "Kabupaten/Regency": "",
-              "\"Laki-Laki": ""
-          }
-        ]
-    };
-    
-      var options = {'animation': {startup: true,
-                        'easing' :'inAndOut',
-                        'duration':1000
-                        },
-                        vAxes: {
-                            0: {title:'Total Sales Amt',textStyle: {color: 'blue'}, format:'short'},
-                            1: {title:'Avg Sales Qty',textStyle: {color: 'red'}, format:'short' }
-                          },
-                        series: {
-                        0: {type: 'bars', targetAxisIndex:0},
-                        1: {type: 'bars', targetAxisIndex:1}
-                        } 
-                    };
-        var container = "chart_div"
-        var currDrillLevel = [];
-        currDrillLevel.push(d);
-          var displayData = new google.visualization.DataTable(currDrillLevel[currDrillLevel.length-1].data);
-    
-          var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-        
-      function selectHandler(){
-          var selectedItem = chart.getSelection()[0]; 
-          if (selectedItem) {
-              var item = displayData.getValue(selectedItem.row, 0); 
-              var currElement =  currDrillLevel[currDrillLevel.length-1][item];
-              if(currElement !== undefined){
-                displayData = new google.visualization.DataTable(currElement.data);
-                currDrillLevel.push(currDrillLevel[currDrillLevel.length-1][item]); 
-                if(options.title === undefined || options.title === "")
-                  options.title = ""+item;
-                else
-                  options.title += " | " + item;
-                chart.draw(displayData,options);
-              }
-              
-            }
-        }
-        function uselessHandler2() {
-          $('#'+container).css('cursor','pointer')
-        } 
-        function uselessHandler3() {
-          $('#'+container).css('cursor','default')
-        } 	
-    
-          google.visualization.events.addListener(chart, 'select', selectHandler);
-          google.visualization.events.addListener(chart, 'onmouseover', uselessHandler2);
-          google.visualization.events.addListener(chart, 'onmouseout', uselessHandler3);
-    
-    
-        var button = document.getElementById('b1');
-        button.onclick = function() {
-      if(currDrillLevel.length > 1){
-        currDrillLevel.pop();
-        displayData = new google.visualization.DataTable(currDrillLevel[currDrillLevel.length-1].data);
-              var lastIndex = options.title.lastIndexOf(" | ");
-              if(lastIndex === -1)
-                options.title = "";
-              else
-                options.title = options.title.substr(0,lastIndex);
-              chart.draw(displayData,options);
-        }
-        }
-    
-          chart.draw(displayData,options);
-        }
-    
-        </script>
-
+      
+      <div class="chartCard">
+        <div class="chartBox">
+          <canvas id="myChart"></canvas>
+        </div>
       </div>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+      <script>
+      // setup 
+      const data = {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        datasets: [{
+          label: 'Weekly Sales',
+          data: [18, 12, 6, 9, 12, 3, 9],
+          backgroundColor: [
+            'rgba(255, 26, 104, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(0, 0, 0, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 26, 104, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)',
+            'rgba(0, 0, 0, 1)'
+          ],
+          borderWidth: 1
+        }]
+      };
+  
+      const Mon = {
+        labels: ['Aug', 'Sept', 'Oct', 'Nov', 'Des'],
+        datasets: [{
+          label: 'Weekly Sales',
+          data: [14, 10, 4, 11, 10, 1, 18],
+          backgroundColor: [
+            'rgba(255, 26, 104, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(0, 0, 0, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 26, 104, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)',
+            'rgba(0, 0, 0, 1)'
+          ],
+          borderWidth: 1
+        }]
+      };
+
+      // config 
+      const config = {
+        type: 'bar',
+        data,
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      };
+  
+      // render init block
+      const ctx = document.getElementById('myChart');
+      const myChart = new Chart(
+        ctx,
+        config
+      );
+
+      function clickHandler(evt) {
+        const points = myChart.getElementsAtEventForMode(evt, 'nearest', { intersect: true }, true);
+
+        if (points.length) {
+          const firstPoint = points[0];
+          const label = myChart.data.labels[firstPoint.index];
+          const value = myChart.data.datasets[firstPoint.datasetIndex].data[firstPoint.index];
+
+          if(firstPoint.index == 0){
+            console.log(Mon);
+            myChart.config.data = Mon;
+          } 
+          
+          myChart.update();
+        }
+      }
+      
+      ctx.onclick = clickHandler;
+  
+      // Instantly assign Chart.js version
+      const chartVersion = document.getElementById('chartVersion');
+      chartVersion.innerText = Chart.version;
+      </script>
+      
     </section><!-- End Gallery Section -->
 
     <!-- ======= Testimonials Section ======= -->
