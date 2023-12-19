@@ -153,6 +153,7 @@
 
       <div class="chartCard">
         <div class="chartBox">
+          <button onclick="chartReset()">Back</button>
           <canvas id="myChart"></canvas>
         </div>
       </div>
@@ -299,6 +300,11 @@
       }
       
       ctx.onclick = clickHandler;
+
+      function chartReset(){
+        myChart.config.data = data;
+        myChart.update();
+      }
   
       // Instantly assign Chart.js version
       const chartVersion = document.getElementById('chartVersion');
