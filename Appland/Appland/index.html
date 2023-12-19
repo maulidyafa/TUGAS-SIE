@@ -142,25 +142,25 @@
       </div>
     </section><!-- End App Features Section -->
 
-    <!-- ======= Gallery Section ======= -->
+    <!-- ======= Tingkat Pengangguran Terbuka Section ======= -->
     <section id="gallery" class="gallery">
       <div class="container" data-aos="fade-up">
         <div class="section-title">
           <h2>Tingkat Pengangguran Terbuka</h2>
-          <p>Magnam dolores commodi suscipit.</p>
+          <p>Persentase jumlah pengangguran terhadap jumlah angkatan kerja. Mengindikasikan besarnya persentase angkatan kerja yang termasuk dalam pengangguran. TPT yang tinggi menunjukkan bahwa terdapat banyak angkatan kerja yang tidak terserap pada pasar kerja.	</p>
         </div>
       </div>
 
       <div class="chartCard">
         <div class="chartBox">
-          <button onclick="chartReset()">Back</button>
-          <canvas id="myChart"></canvas>
+          <button onclick="chartResetTpt()">Back</button>
+          <canvas id="myChartTpt"></canvas>
         </div>
       </div>
       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
       <script>
       // setup 
-      const data = {
+      const dataTpt = {
         labels: ['2021', '2022', '2023'],
         datasets: [{
           label: 'Percentage',
@@ -179,7 +179,7 @@
         }]
       };
   
-      const kota21 = {
+      const kotaTpt21 = {
         labels: [
           "Pacitan", "Ponorogo", "Trenggalek", "Tulungagung", "Blitar", "Kediri", "Malang", "Lumajang", "Jember", "Banyuwangi", "Bondowoso", "Situbondo", "Probolinggo", "Pasuruan", "Sidoarjo", "Mojokerto", "Jombang", "Nganjuk", "Madiun", "Magetan", "Ngawi", "Tuban", "Lamongan", "Gresik", "Bangkalan", "Sampang", "Pamekasan", "Sumenep", "Kediri", "Blitar", "Malang", "Probolinggo", "Pasuruan", "Mojokerto", "Madiun", "Surabaya", "Batu",
         ],
@@ -204,7 +204,7 @@
         }]
       };
 
-      const kota22 = {
+      const kotaTpt22 = {
         labels: [
           "Pacitan", "Ponorogo", "Trenggalek", "Tulungagung", "Blitar", "Kediri", "Malang", "Lumajang", "Jember", "Banyuwangi", "Bondowoso", "Situbondo", "Probolinggo", "Pasuruan", "Sidoarjo", "Mojokerto", "Jombang", "Nganjuk", "Madiun", "Magetan", "Ngawi", "Tuban", "Lamongan", "Gresik", "Bangkalan", "Sampang", "Pamekasan", "Sumenep", "Kediri", "Blitar", "Malang", "Probolinggo", "Pasuruan", "Mojokerto", "Madiun", "Surabaya", "Batu",
         ],
@@ -228,21 +228,8 @@
           borderWidth: 1
         }]
       };
-
-      // config 
-      const config = {
-        type: 'bar',
-        data,
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true
-            }
-          }
-        }
-      };
-  
-      const kota23 = {
+      
+      const kotaTpt23 = {
         labels: [
           "Pacitan", "Ponorogo", "Trenggalek", "Tulungagung", "Blitar", "Kediri", "Malang", "Lumajang", "Jember", "Banyuwangi", "Bondowoso", "Situbondo", "Probolinggo", "Pasuruan", "Sidoarjo", "Mojokerto", "Jombang", "Nganjuk", "Madiun", "Magetan", "Ngawi", "Tuban", "Lamongan", "Gresik", "Bangkalan", "Sampang", "Pamekasan", "Sumenep", "Kediri", "Blitar", "Malang", "Probolinggo", "Pasuruan", "Mojokerto", "Madiun", "Surabaya", "Batu",
         ],
@@ -267,51 +254,235 @@
         }]
       };
 
+      // config 
+      const configTpt = {
+        type: 'bar',
+        data: dataTpt,
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      };
+  
       // render init block
-      const ctx = document.getElementById('myChart');
-      const myChart = new Chart(
-        ctx,
-        config
+      const ctxTpt = document.getElementById('myChartTpt');
+      const myChartTpt = new Chart(
+        ctxTpt,
+        configTpt
       );
 
-      function clickHandler(evt) {
-        const points = myChart.getElementsAtEventForMode(evt, 'nearest', { intersect: true }, true);
+      function clickHandlerTpt(evt) {
+        const pointsTpt = myChartTpt.getElementsAtEventForMode(evt, 'nearest', { intersect: true }, true);
 
-        if (points.length) {
-          const firstPoint = points[0];
-          const label = myChart.data.labels[firstPoint.index];
-          const value = myChart.data.datasets[firstPoint.datasetIndex].data[firstPoint.index];
+        if (pointsTpt.length) {
+          const firstPointTpt = pointsTpt[0];
+          const labelTpt = myChartTpt.data.labels[firstPointTpt.index];
+          const valueTpt = myChartTpt.data.datasets[firstPointTpt.datasetIndex].data[firstPointTpt.index];
 
-          if(firstPoint.index == 0){
-            console.log(kota21);
-            myChart.config.data = kota21;
+          if(firstPointTpt.index == 0){
+            console.log(kotaTpt21);
+            myChartTpt.config.data = kotaTpt21;
           } 
-          else if(firstPoint.index == 1){
-            console.log(kota22);
-            myChart.config.data = kota22;
+          else if(firstPointTpt.index == 1){
+            console.log(kotaTpt22);
+            myChartTpt.config.data = kotaTpt22;
           } 
-          else if(firstPoint.index == 2){
-            console.log(kota23);
-            myChart.config.data = kota23;
+          else if(firstPointTpt.index == 2){
+            console.log(kotaTpt23);
+            myChartTpt.config.data = kotaTpt23;
           }
           
-          myChart.update();
+          myChartTpt.update();
         }
       }
       
-      ctx.onclick = clickHandler;
+      ctxTpt.onclick = clickHandlerTpt;
 
-      function chartReset(){
-        myChart.config.data = data;
-        myChart.update();
+      function chartResetTpt(){
+        myChartTpt.config.data = dataTpt;
+        myChartTpt.update();
       }
   
       // Instantly assign Chart.js version
-      const chartVersion = document.getElementById('chartVersion');
-      chartVersion.innerText = Chart.version;
+      const chartVersionTpt = document.getElementById('chartVersion');
+      chartVersionTpt.innerText = Chart.version;
       </script>
       
-    </section><!-- End Gallery Section -->
+    </section><!-- End Tingkat Pengangguran Terbuka Section -->
+
+    <!-- ======= Tingkat Partisipasi Angkatan Kerja Section ======= -->
+    <section id="gallery" class="gallery">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Tingkat Partisipasi Angkatan Kerja</h2>
+          <p>Persentase partisipasi angkatan kerja yang mengindikasikan besarnya persentase partisipasi angkatan kerja. </p>
+        </div>
+      </div>
+
+      <div class="chartCard">
+        <div class="chartBox">
+          <button onclick="chartResetTpak()">Back</button>
+          <canvas id="myChartTpak"></canvas>
+        </div>
+      </div>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+      <script>
+      // setup 
+      const dataTpak = {
+        labels: ['2021', '2022', '2023'],
+        datasets: [{
+          label: 'Percentage',
+          data: [5.74, 5.49,	4.88],
+          backgroundColor: [
+            'rgba(255, 26, 104, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 26, 104, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)'
+          ],
+          borderWidth: 1
+        }]
+      };
+  
+      const kotaTpak21 = {
+        labels: [
+          "Pacitan", "Ponorogo", "Trenggalek", "Tulungagung", "Blitar", "Kediri", "Malang", "Lumajang", "Jember", "Banyuwangi", "Bondowoso", "Situbondo", "Probolinggo", "Pasuruan", "Sidoarjo", "Mojokerto", "Jombang", "Nganjuk", "Madiun", "Magetan", "Ngawi", "Tuban", "Lamongan", "Gresik", "Bangkalan", "Sampang", "Pamekasan", "Sumenep", "Kediri", "Blitar", "Malang", "Probolinggo", "Pasuruan", "Mojokerto", "Madiun", "Surabaya", "Batu",
+        ],
+        datasets: [{
+          label: '2021',
+          data: [
+            2.04, 4.38, 3.53, 4.91, 3.66, 5.15, 5.40, 3.51, 5.44, 5.42, 4.46, 3.68, 4.55, 6.03, 10.87, 5.54, 7.09, 4.98, 4.99, 3.86, 4.25, 4.82, 4.68, 4.90, 8.00, 8.07, 3.45, 3.10, 2.31, 6.37, 6.61, 9.65, 6.55, 6.23, 6.87, 8.15, 9.68, 6.57,
+          ],
+          backgroundColor: [
+            'rgba(255, 26, 104, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(0, 0, 0, 0.2)',
+            'rgba(255, 26, 104, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(0, 0, 0, 0.2)',
+            'rgba(255, 26, 104, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(0, 0, 0, 0.2)',
+            'rgba(255, 26, 104, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(0, 0, 0, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 26, 104, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)', 'rgba(0, 0, 0, 1)',
+            'rgba(255, 26, 104, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)', 'rgba(0, 0, 0, 1)',
+            'rgba(255, 26, 104, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)', 'rgba(0, 0, 0, 1)',
+            'rgba(255, 26, 104, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)', 'rgba(0, 0, 0, 1)'
+          ],
+          borderWidth: 1
+        }]
+      };
+
+      const kotaTpak22 = {
+        labels: [
+          "Pacitan", "Ponorogo", "Trenggalek", "Tulungagung", "Blitar", "Kediri", "Malang", "Lumajang", "Jember", "Banyuwangi", "Bondowoso", "Situbondo", "Probolinggo", "Pasuruan", "Sidoarjo", "Mojokerto", "Jombang", "Nganjuk", "Madiun", "Magetan", "Ngawi", "Tuban", "Lamongan", "Gresik", "Bangkalan", "Sampang", "Pamekasan", "Sumenep", "Kediri", "Blitar", "Malang", "Probolinggo", "Pasuruan", "Mojokerto", "Madiun", "Surabaya", "Batu",
+        ],
+        datasets: [{
+          label: '2022',
+          data: [
+            3.65, 5.51, 5.37, 6.65, 5.45, 6.83, 6.57, 4.97, 4.06, 5.26, 4.32, 3.38, 3.25, 5.91, 8.80, 4.83, 5.47, 4.74, 5.84, 4.33, 2.48, 4.69, 4.54, 6.05, 7.84, 8.05, 3.11, 1.40, 1.36, 4.38, 5.39, 7.66, 4.57, 6.18, 5.05, 6.39, 7.62, 8.43,
+          ],
+          backgroundColor: [
+            'rgba(255, 26, 104, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(0, 0, 0, 0.2)', 
+            'rgba(255, 26, 104, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(0, 0, 0, 0.2)', 
+            'rgba(255, 26, 104, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(0, 0, 0, 0.2)', 
+            'rgba(255, 26, 104, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(0, 0, 0, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 26, 104, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)', 'rgba(0, 0, 0, 1)', 
+            'rgba(255, 26, 104, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)', 'rgba(0, 0, 0, 1)',
+            'rgba(255, 26, 104, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)', 'rgba(0, 0, 0, 1)',
+            'rgba(255, 26, 104, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)', 'rgba(0, 0, 0, 1)'
+          ],
+          borderWidth: 1
+        }]
+      };
+      
+      const kotaTpak23 = {
+        labels: [
+          "Pacitan", "Ponorogo", "Trenggalek", "Tulungagung", "Blitar", "Kediri", "Malang", "Lumajang", "Jember", "Banyuwangi", "Bondowoso", "Situbondo", "Probolinggo", "Pasuruan", "Sidoarjo", "Mojokerto", "Jombang", "Nganjuk", "Madiun", "Magetan", "Ngawi", "Tuban", "Lamongan", "Gresik", "Bangkalan", "Sampang", "Pamekasan", "Sumenep", "Kediri", "Blitar", "Malang", "Probolinggo", "Pasuruan", "Mojokerto", "Madiun", "Surabaya", "Batu",
+        ],
+        datasets: [{
+          label: 'Percentage',
+          data: [
+            1.83, 4.66, 4.52, 5.65, 4.91, 5.79, 5.70, 3.67, 4.01, 4.75, 4.15, 3.27, 3.24, 5.48, 8.05, 4.67, 4.66, 4.68, 5.14, 4.16, 2.41, 4.63, 4.40, 5.46, 6.82, 6.18, 2.72, 1.74, 1.71, 4.06, 5.24, 6.80, 4.53, 5.64, 4.73, 5.85, 6.76, 4.52,
+          ],
+          backgroundColor: [
+            'rgba(255, 26, 104, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(0, 0, 0, 0.2)',
+            'rgba(255, 26, 104, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(0, 0, 0, 0.2)', 
+            'rgba(255, 26, 104, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(0, 0, 0, 0.2)', 
+            'rgba(255, 26, 104, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(0, 0, 0, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 26, 104, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)', 'rgba(0, 0, 0, 1)', 
+            'rgba(255, 26, 104, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)', 'rgba(0, 0, 0, 1)',
+            'rgba(255, 26, 104, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)', 'rgba(0, 0, 0, 1)',
+            'rgba(255, 26, 104, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)', 'rgba(0, 0, 0, 1)'
+          ],
+          borderWidth: 1
+        }]
+      };
+
+      // config 
+      const configTpak = {
+        type: 'bar',
+        data: dataTpak,
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      };
+  
+      // render init block
+      const ctxTpak = document.getElementById('myChartTpak');
+      const myChartTpak = new Chart(
+        ctxTpak,
+        configTpak
+      );
+
+      function clickHandlerTpak(evt) {
+        const pointsTpak = myChartTpak.getElementsAtEventForMode(evt, 'nearest', { intersect: true }, true);
+
+        if (pointsTpak.length) {
+          const firstPointTpak = pointsTpak[0];
+          const labelTpak = myChartTpak.data.labels[firstPointTpak.index];
+          const valueTpak = myChartTpak.data.datasets[firstPointTpak.datasetIndex].data[firstPointTpak.index];
+
+          if(firstPointTpak.index == 0){
+            console.log(kotaTpak21);
+            myChartTpak.config.data = kotaTpak21;
+          } 
+          else if(firstPointTpak.index == 1){
+            console.log(kotaTpak22);
+            myChartTpak.config.data = kotaTpak22;
+          } 
+          else if(firstPointTpak.index == 2){
+            console.log(kotaTpak23);
+            myChartTpak.config.data = kotaTpak23;
+          }
+          
+          myChartTpak.update();
+        }
+      }
+      
+      ctxTpak.onclick = clickHandlerTpak;
+
+      function chartResetTpak(){
+        myChartTpak.config.data = dataTpak;
+        myChartTpak.update();
+      }
+  
+      // Instantly assign Chart.js version
+      const chartVersionTpak = document.getElementById('chartVersion');
+      chartVersionTpak.innerText = Chart.version;
+      </script>
+      
+    </section><!-- End Tingkat Pengangguran Terbuka Section -->
 
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials section-bg">
