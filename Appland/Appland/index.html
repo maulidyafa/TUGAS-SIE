@@ -9,6 +9,9 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
+  <!-- Database Connect -->
+  <!-- <script type="text/javascript" src="database.js"></script> -->
+
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -158,7 +161,18 @@
         </div>
       </div>
       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+      <!-- <script type="module" src=".\conn\server.php"></script> -->
       <script>
+      fetch('./conn/server.php')
+        .then(response => response.json())
+        .then(data => {
+          // Display the data on the HTML page
+          // data.forEach(item => {
+            console.log(data);
+          // });
+        })
+        .catch(error => console.error('Error fetching data:', error));
+    
       // setup 
       const dataTpt = {
         labels: ['2021', '2022', '2023'],
@@ -330,6 +344,10 @@
       </div>
       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
       <script>
+      
+      // const checkdb = dbPool.listKota;
+      // console.log(checkdb);
+
       // setup 
       const dataTpak = {
         labels: ['2021', '2022', '2023'],
