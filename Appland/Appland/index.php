@@ -5,7 +5,6 @@
 
             //data tpt21
             $resultTpt21 = $conn->query("SELECT kota, tahun, jmlh_pengangguran FROM tingkat_pengangguran NATURAL JOIN tahun NATURAL JOIN kota WHERE tahun = '2021';");
-
             while ($rowTpt21 = $resultTpt21->fetch_assoc()) {
                 $kotaTpt21[] = $rowTpt21['kota'];
                 $thnTpt21[] = $rowTpt21['tahun'];
@@ -14,7 +13,6 @@
 
             //data tpt22
             $resultTpt22 = $conn->query("SELECT kota, tahun, jmlh_pengangguran FROM tingkat_pengangguran NATURAL JOIN tahun NATURAL JOIN kota WHERE tahun = '2022';");
-
             while ($rowTpt22 = $resultTpt22->fetch_assoc()) {
                 $kotaTpt22[] = $rowTpt22['kota'];
                 $thnTpt22[] = $rowTpt22['tahun'];
@@ -23,7 +21,6 @@
 
             //data tpt23
             $resultTpt23 = $conn->query("SELECT kota, tahun, jmlh_pengangguran FROM tingkat_pengangguran NATURAL JOIN tahun NATURAL JOIN kota WHERE tahun = '2023';");
-
             while ($rowTpt23 = $resultTpt23->fetch_assoc()) {
                 $kotaTpt23[] = $rowTpt23['kota'];
                 $thnTpt23[] = $rowTpt23['tahun'];
@@ -32,7 +29,6 @@
             
             //data tpak21
             $resultTpak21 = $conn->query("SELECT kota, tahun, jmlh_partisipasi FROM tingkat_partisipasi NATURAL JOIN tahun NATURAL JOIN kota WHERE tahun = '2021';");
-
             while ($rowTpak21 = $resultTpak21 ->fetch_assoc()) {
                 $kotaTpak21[] = $rowTpak21['kota'];
                 $thnTpak21[] = $rowTpak21['tahun'];
@@ -41,7 +37,6 @@
             
             //data tpak22
             $resultTpak22 = $conn->query("SELECT kota, tahun, jmlh_partisipasi FROM tingkat_partisipasi NATURAL JOIN tahun NATURAL JOIN kota WHERE tahun = '2022';");
-
             while ($rowTpak22 = $resultTpak22 ->fetch_assoc()) {
                 $kotaTpak22[] = $rowTpak22['kota'];
                 $thnTpak22[] = $rowTpak22['tahun'];
@@ -50,7 +45,6 @@
 
             //data tpak23
             $resultTpak23 = $conn->query("SELECT kota, tahun, jmlh_partisipasi FROM tingkat_partisipasi NATURAL JOIN tahun NATURAL JOIN kota WHERE tahun = '2023';");
-
             while ($rowTpak23 = $resultTpak23 ->fetch_assoc()) {
                 $kotaTpak23[] = $rowTpak23['kota'];
                 $thnTpak23[] = $rowTpak23['tahun'];
@@ -59,7 +53,6 @@
 
             //data tp21
             $resultTp21 = $conn->query("SELECT kota, tahun, jmlh_perempuan, jmlh_lakilaki FROM total_penduduk NATURAL JOIN tahun NATURAL JOIN kota WHERE tahun = '2021';");
-
             while ($rowTp21 = $resultTp21 ->fetch_assoc()) {
                 $kotaTp21[] = $rowTp21['kota'];
                 $thnTp21[] = $rowTp21['tahun'];
@@ -69,7 +62,6 @@
 
             //data tp22
             $resultTp22 = $conn->query("SELECT kota, tahun, jmlh_perempuan, jmlh_lakilaki FROM total_penduduk NATURAL JOIN tahun NATURAL JOIN kota WHERE tahun = '2022';");
-
             while ($rowTp22 = $resultTp22 ->fetch_assoc()) {
                 $kotaTp22[] = $rowTp22['kota'];
                 $thnTp22[] = $rowTp22['tahun'];
@@ -79,7 +71,6 @@
 
             //data tp23
             $resultTp23 = $conn->query("SELECT kota, tahun, jmlh_perempuan, jmlh_lakilaki FROM total_penduduk NATURAL JOIN tahun NATURAL JOIN kota WHERE tahun = '2023';");
-
             while ($rowTp23 = $resultTp23 ->fetch_assoc()) {
                 $kotaTp23[] = $rowTp23['kota'];
                 $thnTp23[] = $rowTp23['tahun'];
@@ -87,8 +78,8 @@
                 $jmlhLkTp23[] = $rowTp23['jmlh_lakilaki'];
             }
         }
-        
     ?>
+
 <head>
 <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -118,13 +109,6 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Appland
-  * Updated: Sep 25 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/free-bootstrap-app-landing-page-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 <body>
     <!-- <div class="main-container"></div> -->
@@ -142,7 +126,7 @@
                 <ul>
                     <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                     <li><a class="nav-link scrollto" href="#gallery">DrillDown</a></li>
-                    <li><a class="nav-link scrollto" href="#pricing">Analisis What-If</a></li>
+                    <li><a class="nav-link scrollto" href="../Applandd\index.html">Analisis What-If</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
@@ -158,7 +142,7 @@
                 <div class="col-lg-6 d-lg-flex flex-lg-column justify-content-center align-items-stretch pt-5 pt-lg-0 order-2 order-lg-1">
                     <div>
                         <h1>Sistem Informasi Eksekutif</h1>
-                        <h2>Sistem Informasi Eksekutif Lapangan usaha dan Angkatan kerja di Jawa Timur</h2>
+                        <h2>Sistem Informasi Eksekutif Data Pengangguran dan Angkatan kerja di Jawa Timur</h2>
                         <h2 style="margin-bottom: 10px;">Nama Tim</h2>
                         <ul>
                             <li> Maulidya Firdausy Al Fitri      (20082010102)</li>
@@ -179,6 +163,7 @@
   
     <main id="main">
 
+    
         <!-- ======= Tingkat Pengangguran Terbuka Section ======= -->
         <section id="gallery" class="gallery">
             <div class="container">
@@ -234,8 +219,7 @@
                         $i = 0;
                         while($i < 4) { ?>
                             'rgba(255, 26, 104, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)', 'rgba(0, 0, 0, 0.4)',
-                        <?php $i = $i + 1; }
-                        ?>
+                        <?php $i = $i + 1; } ?>
                     ],
                     borderColor: [
                         <?php
@@ -273,8 +257,7 @@
                             $i = 0;
                             while($i < 4) { ?>
                                 'rgba(255, 26, 104, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)', 'rgba(0, 0, 0, 0.4)',
-                            <?php $i = $i + 1; }
-                            ?>
+                            <?php $i = $i + 1; } ?>
                         ],
                         borderWidth: 1
                     }]
@@ -412,28 +395,27 @@
                         } ?>
                     ],
                     datasets: [{
-                    label: '2021',
-                    data: [
-                        <?php foreach($jmlhTpak21 as $jml) {
-                            echo "'$jml', ";
-                        } ?>
-                    ],
-                    backgroundColor: [
-                        <?php
-                        $i = 0;
-                        while($i < 4) { ?>
-                            'rgba(255, 26, 104, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)', 'rgba(0, 0, 0, 0.4)',
-                        <?php $i = $i + 1; }
-                        ?>
-                    ],
-                    borderColor: [
-                        <?php
-                        $i = 0;
-                        while($i < 4) { ?>
-                            'rgba(255, 26, 104, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)', 'rgba(0, 0, 0, 0.4)',
-                        <?php $i = $i + 1; } ?>
-                    ],
-                    borderWidth: 1
+                        label: '2021',
+                        data: [
+                            <?php foreach($jmlhTpak21 as $jml) {
+                                echo "'$jml', ";
+                            } ?>
+                        ],
+                        backgroundColor: [
+                            <?php
+                            $i = 0;
+                            while($i < 4) { ?>
+                                'rgba(255, 26, 104, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)', 'rgba(0, 0, 0, 0.4)',
+                            <?php $i = $i + 1; } ?>
+                        ],
+                        borderColor: [
+                            <?php
+                            $i = 0;
+                            while($i < 4) { ?>
+                                'rgba(255, 26, 104, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)', 'rgba(0, 0, 0, 0.4)',
+                            <?php $i = $i + 1; } ?>
+                        ],
+                        borderWidth: 1
                     }]
                 };
 
