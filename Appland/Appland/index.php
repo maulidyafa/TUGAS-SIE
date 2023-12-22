@@ -556,28 +556,6 @@
             </div>
             <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
             <script>
-                const predefinedColors = [
-                    'rgb(255, 99, 132)',
-                    'rgb(75, 192, 192)',
-                    'rgb(255, 205, 86)',
-                    'rgb(255, 205, 255)',
-                    'rgb(201, 203, 207)',
-                    'rgb(54, 162, 235)'
-                ];
-
-                function getRandomColors(count) {
-                    const colors = [];
-                    for (let i = 0; i < count; i++) {
-                        colors.push(getRandomColor(predefinedColors));
-                    }
-                    return colors;
-                }
-
-                function getRandomColor(colors) {
-                    const randomIndex = Math.floor(Math.random() * colors.length);
-                    return colors[randomIndex];
-                }
-
                 // setup 
                 const dataTp = {
                     labels: [ '2021', '2022', '2023' ],
@@ -681,7 +659,7 @@
                     data: [
                         <?php 
                         $i = 0;
-                        while($i < count($jmlhPrTp23)){
+                        while($i < count($kotaTp23)){
                             $jml = $jmlhPrTp23[$i] + $jmlhLkTp23[$i];
                             echo "'$jml', ";
                             $i = $i + 1;
@@ -706,37 +684,37 @@
                     }]
                 };
 
-                const jkTp23 = {
-                    labels: ['Perempuan', 'Laki-Laki'],
-                    datasets: [{
-                    label: '2023',
-                    data: [
-                        <?php 
-                        $i = 0;
-                        while($i < count($jmlhPrTp23)){
-                            $jml = $jmlhPrTp23[$i] + $jmlhLkTp23[$i];
-                            echo "'$jml', ";
-                            $i = $i + 1;
-                        } ?>
-                    ],
-                    backgroundColor: [
-                        <?php
-                        $i = 0;
-                        while($i < 4) { ?>
-                            'rgba(255, 26, 104, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)', 'rgba(0, 0, 0, 0.4)',
-                        <?php $i = $i + 1; }
-                        ?>
-                    ],
-                    borderColor: [
-                        <?php
-                        $i = 0;
-                        while($i < 4) { ?>
-                            'rgba(255, 26, 104, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)', 'rgba(0, 0, 0, 0.4)',
-                        <?php $i = $i + 1; } ?>
-                    ],
-                    borderWidth: 1
-                    }]
-                };
+                // const jkTp23 = {
+                //     labels: ['Perempuan', 'Laki-Laki'],
+                //     datasets: [{
+                //     label: '2023',
+                //     data: [
+                //          
+                //         $i = 0;
+                //         while($i < count($jmlhPrTp23)){
+                //             $jml = $jmlhPrTp23[$i] + $jmlhLkTp23[$i];
+                //             echo "'$jml', ";
+                //             $i = $i + 1;
+                //         } ?>
+                //     ],
+                //     backgroundColor: [
+                //         
+                //         $i = 0;
+                //         while($i < 4) { ?>
+                //             'rgba(255, 26, 104, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)', 'rgba(0, 0, 0, 0.4)',
+                //          $i = $i + 1; }
+                //         ?>
+                //     ],
+                //     borderColor: [
+                //         
+                //         $i = 0;
+                //         while($i < 4) { ?>
+                //             'rgba(255, 26, 104, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)', 'rgba(0, 0, 0, 0.4)',
+                //          $i = $i + 1; } ?>
+                //     ],
+                //     borderWidth: 1
+                //     }]
+                // };
 
                 // config 
                 const configTp = {
@@ -770,7 +748,6 @@
                             console.log(kotaTp21);
                             myChartTp.config.data = kotaTp21;
                         } 
-                        // else if(myChartTp.data.labels[0] == );
                         else if(firstPointTp.index == 1){
                             console.log(kotaTp22);
                             myChartTp.config.data = kotaTp22;
