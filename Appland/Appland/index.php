@@ -56,6 +56,36 @@
                 $thnTpak23[] = $rowTpak23['tahun'];
                 $jmlhTpak23[] = $rowTpak23['jmlh_partisipasi'];
             }
+
+            //data tp21
+            $resultTp21 = $conn->query("SELECT kota, tahun, jmlh_perempuan, jmlh_lakilaki FROM total_penduduk NATURAL JOIN tahun NATURAL JOIN kota WHERE tahun = '2021';");
+
+            while ($rowTp21 = $resultTp21 ->fetch_assoc()) {
+                $kotaTp21[] = $rowTp21['kota'];
+                $thnTp21[] = $rowTp21['tahun'];
+                $jmlhPrTp21[] = $rowTp21['jmlh_perempuan'];
+                $jmlhLkTp21[] = $rowTp21['jmlh_lakilaki'];
+            }
+
+            //data tp22
+            $resultTp22 = $conn->query("SELECT kota, tahun, jmlh_perempuan, jmlh_lakilaki FROM total_penduduk NATURAL JOIN tahun NATURAL JOIN kota WHERE tahun = '2022';");
+
+            while ($rowTp22 = $resultTp22 ->fetch_assoc()) {
+                $kotaTp22[] = $rowTp22['kota'];
+                $thnTp22[] = $rowTp22['tahun'];
+                $jmlhPrTp22[] = $rowTp22['jmlh_perempuan'];
+                $jmlhLkTp22[] = $rowTp22['jmlh_lakilaki'];
+            }
+
+            //data tp23
+            $resultTp23 = $conn->query("SELECT kota, tahun, jmlh_perempuan, jmlh_lakilaki FROM total_penduduk NATURAL JOIN tahun NATURAL JOIN kota WHERE tahun = '2023';");
+
+            while ($rowTp23 = $resultTp23 ->fetch_assoc()) {
+                $kotaTp23[] = $rowTp23['kota'];
+                $thnTp23[] = $rowTp23['tahun'];
+                $jmlhPrTp23[] = $rowTp23['jmlh_perempuan'];
+                $jmlhLkTp23[] = $rowTp23['jmlh_lakilaki'];
+            }
         }
         
     ?>
@@ -173,14 +203,14 @@
                     label: 'Percentage',
                     data: [5.74, 5.49,	4.88],
                     backgroundColor: [
-                        'rgba(255, 26, 104, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)'
+                        'rgba(255, 26, 104, 0.4)',
+                        'rgba(54, 162, 235, 0.4)',
+                        'rgba(255, 206, 86, 0.4)'
                     ],
                     borderColor: [
-                        'rgba(255, 26, 104, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)'
+                        'rgba(255, 26, 104)',
+                        'rgba(54, 162, 235)',
+                        'rgba(255, 206, 86)'
                     ],
                     borderWidth: 1
                     }]
@@ -203,7 +233,7 @@
                         <?php
                         $i = 0;
                         while($i < 4) { ?>
-                            'rgba(255, 26, 104, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(0, 0, 0, 0.2)',
+                            'rgba(255, 26, 104, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)', 'rgba(0, 0, 0, 0.4)',
                         <?php $i = $i + 1; }
                         ?>
                     ],
@@ -211,7 +241,7 @@
                         <?php
                         $i = 0;
                         while($i < 4) { ?>
-                            'rgba(255, 26, 104, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(0, 0, 0, 0.2)',
+                            'rgba(255, 26, 104, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)', 'rgba(0, 0, 0, 0.4)',
                         <?php $i = $i + 1; } ?>
                     ],
                     borderWidth: 1
@@ -235,14 +265,14 @@
                             <?php
                             $i = 0;
                             while($i < 4) { ?>
-                                'rgba(255, 26, 104, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(0, 0, 0, 0.2)',
+                                'rgba(255, 26, 104, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)', 'rgba(0, 0, 0, 0.4)',
                             <?php $i = $i + 1; } ?>
                         ],
                         borderColor: [
                             <?php
                             $i = 0;
                             while($i < 4) { ?>
-                                'rgba(255, 26, 104, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(0, 0, 0, 0.2)',
+                                'rgba(255, 26, 104, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)', 'rgba(0, 0, 0, 0.4)',
                             <?php $i = $i + 1; }
                             ?>
                         ],
@@ -266,14 +296,14 @@
                             <?php
                             $i = 0;
                             while($i < 4) { ?>
-                                'rgba(255, 26, 104, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(0, 0, 0, 0.2)',
+                                'rgba(255, 26, 104, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)', 'rgba(0, 0, 0, 0.4)',
                             <?php $i = $i + 1; } ?>
                         ],
                         borderColor: [
                             <?php
                             $i = 0;
                             while($i < 4) { ?>
-                                'rgba(255, 26, 104, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(0, 0, 0, 0.2)',
+                                'rgba(255, 26, 104, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)', 'rgba(0, 0, 0, 0.4)',
                             <?php $i = $i + 1; } ?>
                         ],
                         borderWidth: 1
@@ -362,9 +392,9 @@
                     label: 'Percentage',
                     data: [70.00, 71.23, 72.56],
                     backgroundColor: [
-                        'rgba(255, 26, 104, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)'
+                        'rgba(255, 26, 104, 0.4)',
+                        'rgba(54, 162, 235, 0.4)',
+                        'rgba(255, 206, 86, 0.4)'
                     ],
                     borderColor: [
                         'rgba(255, 26, 104, 1)',
@@ -392,7 +422,7 @@
                         <?php
                         $i = 0;
                         while($i < 4) { ?>
-                            'rgba(255, 26, 104, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(0, 0, 0, 0.2)',
+                            'rgba(255, 26, 104, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)', 'rgba(0, 0, 0, 0.4)',
                         <?php $i = $i + 1; }
                         ?>
                     ],
@@ -400,7 +430,7 @@
                         <?php
                         $i = 0;
                         while($i < 4) { ?>
-                            'rgba(255, 26, 104, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(0, 0, 0, 0.2)',
+                            'rgba(255, 26, 104, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)', 'rgba(0, 0, 0, 0.4)',
                         <?php $i = $i + 1; } ?>
                     ],
                     borderWidth: 1
@@ -424,14 +454,14 @@
                             <?php
                             $i = 0;
                             while($i < 4) { ?>
-                                'rgba(255, 26, 104, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(0, 0, 0, 0.2)',
+                                'rgba(255, 26, 104, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)', 'rgba(0, 0, 0, 0.4)',
                             <?php $i = $i + 1; } ?>
                         ],
                         borderColor: [
                             <?php
                             $i = 0;
                             while($i < 4) { ?>
-                                'rgba(255, 26, 104, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(0, 0, 0, 0.2)',
+                                'rgba(255, 26, 104, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)', 'rgba(0, 0, 0, 0.4)',
                             <?php $i = $i + 1; }
                             ?>
                         ],
@@ -455,14 +485,14 @@
                             <?php
                             $i = 0;
                             while($i < 4) { ?>
-                                'rgba(255, 26, 104, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(0, 0, 0, 0.2)',
+                                'rgba(255, 26, 104, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)', 'rgba(0, 0, 0, 0.4)',
                             <?php $i = $i + 1; } ?>
                         ],
                         borderColor: [
                             <?php
                             $i = 0;
                             while($i < 4) { ?>
-                                'rgba(255, 26, 104, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(0, 0, 0, 0.2)',
+                                'rgba(255, 26, 104, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)', 'rgba(0, 0, 0, 0.4)',
                             <?php $i = $i + 1; } ?>
                         ],
                         borderWidth: 1
@@ -474,11 +504,11 @@
                     type: 'bar',
                     data: dataTpak,
                     options: {
-                    scales: {
-                        y: {
-                        beginAtZero: true
+                        scales: {
+                            y: {
+                            beginAtZero: true
+                            }
                         }
-                    }
                     }
                 };
 
@@ -527,9 +557,286 @@
         </section>
         <!-- End Tingkat Partisipasi Angkatan Kerja Section -->
 
+        <!-- ======= Total Penduduk Section ======= -->
+        <section id="gallery" class="gallery">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Total Penduduk Jawa Timur</h2>
+                    <p> Hasil proyeksi penduduk berdasarkan hasil sensus penduduk dari tahun 2021 hingga 2023 di provinsi Jawa Timur. </p>
+                </div>
+            </div>
+  
+            <div class="chartCard">
+                <div class="chartBox">
+                    <button onclick="chartResetTp()">Back</button>
+                    <canvas id="myChartTp"></canvas>
+                </div>
+            </div>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+            <script>
+                const predefinedColors = [
+                    'rgb(255, 99, 132)',
+                    'rgb(75, 192, 192)',
+                    'rgb(255, 205, 86)',
+                    'rgb(255, 205, 255)',
+                    'rgb(201, 203, 207)',
+                    'rgb(54, 162, 235)'
+                ];
+
+                function getRandomColors(count) {
+                    const colors = [];
+                    for (let i = 0; i < count; i++) {
+                        colors.push(getRandomColor(predefinedColors));
+                    }
+                    return colors;
+                }
+
+                function getRandomColor(colors) {
+                    const randomIndex = Math.floor(Math.random() * colors.length);
+                    return colors[randomIndex];
+                }
+
+                // setup 
+                const dataTp = {
+                    labels: [ '2021', '2022', '2023' ],
+                    datasets: [{
+                        label: 'Total Jiwa',
+                        data: [40878789, 41149974, 41416407],
+                        backgroundColor: [
+                            'rgba(255, 26, 104, 0.4)',
+                            'rgba(54, 162, 235, 0.4)',
+                            'rgba(255, 206, 86, 0.4)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 26, 104)',
+                            'rgba(54, 162, 235)',
+                            'rgba(255, 206, 86)'
+                        ],
+                        borderWidth: 1
+                    }]
+                };
+                
+                const kotaTp21 = {
+                    labels: [
+                        <?php foreach($kotaTp21 as $kt) {
+                            echo "'$kt', ";
+                        } ?>
+                    ],
+                    datasets: [{
+                    label: '2021',
+                    data: [
+                        <?php 
+                        $i = 0;
+                        while($i < count($jmlhPrTp21)){
+                            $jml = $jmlhPrTp21[$i] + $jmlhLkTp21[$i];
+                            echo "'$jml', ";
+                            $i = $i + 1;
+                        } ?>
+                    ],
+                    backgroundColor: [
+                        <?php
+                        $i = 0;
+                        while($i < 4) { ?>
+                            'rgba(255, 26, 104, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)', 'rgba(0, 0, 0, 0.4)',
+                        <?php $i = $i + 1; }
+                        ?>
+                    ],
+                    borderColor: [
+                        <?php
+                        $i = 0;
+                        while($i < 4) { ?>
+                            'rgba(255, 26, 104, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)', 'rgba(0, 0, 0, 0.4)',
+                        <?php $i = $i + 1; } ?>
+                    ],
+                    borderWidth: 1
+                    }]
+                };
+
+                const kotaTp22 = {
+                    labels: [
+                        <?php foreach($kotaTp22 as $kt) {
+                            echo "'$kt', ";
+                        } ?>
+                    ],
+                    datasets: [{
+                    label: '2022',
+                    data: [
+                        <?php 
+                        $i = 0;
+                        while($i < count($jmlhPrTp22)){
+                            $jml = $jmlhPrTp22[$i] + $jmlhLkTp22[$i];
+                            echo "'$jml', ";
+                            $i = $i + 1;
+                        } ?>
+                    ],
+                    backgroundColor: [
+                        <?php
+                        $i = 0;
+                        while($i < 4) { ?>
+                            'rgba(255, 26, 104, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)', 'rgba(0, 0, 0, 0.4)',
+                        <?php $i = $i + 1; }
+                        ?>
+                    ],
+                    borderColor: [
+                        <?php
+                        $i = 0;
+                        while($i < 4) { ?>
+                            'rgba(255, 26, 104, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)', 'rgba(0, 0, 0, 0.4)',
+                        <?php $i = $i + 1; } ?>
+                    ],
+                    borderWidth: 1
+                    }]
+                };
+
+                const kotaTp23 = {
+                    labels: [
+                        <?php foreach($kotaTp23 as $kt) {
+                            echo "'$kt', ";
+                        } ?>
+                    ],
+                    datasets: [{
+                    label: '2023',
+                    data: [
+                        <?php 
+                        $i = 0;
+                        while($i < count($jmlhPrTp23)){
+                            $jml = $jmlhPrTp23[$i] + $jmlhLkTp23[$i];
+                            echo "'$jml', ";
+                            $i = $i + 1;
+                        } ?>
+                    ],
+                    backgroundColor: [
+                        <?php
+                        $i = 0;
+                        while($i < 4) { ?>
+                            'rgba(255, 26, 104, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)', 'rgba(0, 0, 0, 0.4)',
+                        <?php $i = $i + 1; }
+                        ?>
+                    ],
+                    borderColor: [
+                        <?php
+                        $i = 0;
+                        while($i < 4) { ?>
+                            'rgba(255, 26, 104, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)', 'rgba(0, 0, 0, 0.4)',
+                        <?php $i = $i + 1; } ?>
+                    ],
+                    borderWidth: 1
+                    }]
+                };
+
+                const jkTp23 = {
+                    labels: ['Perempuan', 'Laki-Laki'],
+                    datasets: [{
+                    label: '2023',
+                    data: [
+                        <?php 
+                        $i = 0;
+                        while($i < count($jmlhPrTp23)){
+                            $jml = $jmlhPrTp23[$i] + $jmlhLkTp23[$i];
+                            echo "'$jml', ";
+                            $i = $i + 1;
+                        } ?>
+                    ],
+                    backgroundColor: [
+                        <?php
+                        $i = 0;
+                        while($i < 4) { ?>
+                            'rgba(255, 26, 104, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)', 'rgba(0, 0, 0, 0.4)',
+                        <?php $i = $i + 1; }
+                        ?>
+                    ],
+                    borderColor: [
+                        <?php
+                        $i = 0;
+                        while($i < 4) { ?>
+                            'rgba(255, 26, 104, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)', 'rgba(0, 0, 0, 0.4)',
+                        <?php $i = $i + 1; } ?>
+                    ],
+                    borderWidth: 1
+                    }]
+                };
+
+                // config 
+                const configTp = {
+                    type: 'bar',
+                    data: dataTp,
+                    options: {
+                    scales: {
+                        y: {
+                        beginAtZero: true
+                        }
+                    }
+                    }
+                };
+
+                // render init block
+                const ctxTp = document.getElementById('myChartTp');
+                const myChartTp = new Chart(
+                    ctxTp,
+                    configTp
+                );
+
+                function clickHandlerTp(evt) {
+                    const pointsTp = myChartTp.getElementsAtEventForMode(evt, 'nearest', { intersect: true }, true);
+
+                    if (pointsTp.length) {
+                        const firstPointTp = pointsTp[0];
+                        const labelTp = myChartTp.data.labels[firstPointTp.index];
+                        const valueTp = myChartTp.data.datasets[firstPointTp.datasetIndex].data[firstPointTp.index];
+
+                        if(firstPointTp.index == 0){
+                            console.log(kotaTp21);
+                            myChartTp.config.data = kotaTp21;
+                        } 
+                        // else if(myChartTp.data.labels[0] == );
+                        else if(firstPointTp.index == 1){
+                            console.log(kotaTp22);
+                            myChartTp.config.data = kotaTp22;
+                        } 
+                        else if(firstPointTp.index == 2){
+                            console.log(kotaTp23);
+                            myChartTp.config.data = kotaTp23;
+                        }
+                        myChartTp.update();
+                    }
+                }
+  
+                ctxTp.onclick = clickHandlerTp;
+
+                function chartResetTp(){
+                    myChartTp.config.data = dataTp;
+                    myChartTp.update();
+                }
+
+                // Instantly assign Chart.js version
+                const chartVersionTp = document.getElementById('chartVersion');
+                chartVersionTp.innerText = Chart.version;
+            </script>
+        </section>
+        <!-- End Tingkat Partisipasi Angkatan Kerja Section -->
+
 </main>
 <!-- End #main -->
 
+<!-- ======= Footer ======= -->
+<footer id="footer">
+<div class="footer-top">
+  <div class="container">
+    <h5>Sistem Informasi Eksekutif</h5>
+    <p> Maulidya Firdausy Al Fitri (20082010102) Aghni Qisthina Al Rahma (20082010113) Safina Nur Rahmah (20082010121) Athallah Bariq Hidayat (20082010193)
+    </p>
+  </div>
+</div>
+</footer><!-- End Footer -->
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
 
 </body>
 </html>
